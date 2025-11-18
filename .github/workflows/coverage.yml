@@ -16,7 +16,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./COMP.SE.200-library
 
       - name: Run tests and generate coverage
         run: npm test -- --coverage
