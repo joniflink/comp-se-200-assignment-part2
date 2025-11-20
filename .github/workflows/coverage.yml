@@ -18,6 +18,9 @@ jobs:
       - name: Install dependencies
         run: npm ci  # Use 'npm ci' for cleaner, faster installs in CI
 
+      - name: Install Coveralls CLI
+        run: npm install -g coveralls
+
       - name: Run tests with coverage
         run: npm test -- --coverage
 
