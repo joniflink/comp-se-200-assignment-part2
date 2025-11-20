@@ -21,4 +21,4 @@ jobs:
           npm test -- --coverage
   
       - name: Coveralls
-        uses: coverallsapp/github-action@v2
+        uses: coverallsapp/github-action@v2.3
