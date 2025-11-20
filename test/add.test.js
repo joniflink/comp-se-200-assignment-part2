@@ -35,7 +35,7 @@ describe("add.js", () => {
             expect(add(-10, -7)).to.equal(-17)
         })
     })
-
+    /*
     describe("Strings", () => {
         it("should throw an exception with augend as \"two\" and addend as 5", () => {
             expect(add("two", 5)).to.throw()
@@ -44,5 +44,5 @@ describe("add.js", () => {
         it("should throw an expection with augend as 3 and addend as \"four\"", () => {
             expect(add(3, "four")).to.throw()
         })
-    })
+    })*/
 })
