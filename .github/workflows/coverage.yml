@@ -13,12 +13,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: 'npm'  # Cache npm dependencies for faster builds
 
-      - name: npm install, make test-coverage
-        run: |
-          npm install
-          npm install coveralls --save-dev
-          npm test -- --coverage
-  
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2.3
+      - name: Install dependencies
+        run: npm ci  # Use 'npm ci' for cleaner, faster installs in CI
+
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
