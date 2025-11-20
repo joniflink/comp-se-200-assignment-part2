@@ -38,11 +38,11 @@ describe("add.js", () => {
 
     describe("Strings", () => {
         it("should throw an exception with augend as \"two\" and addend as 5", () => {
-            expect(add("two", 5)).to.rejectedWith(Error)
+            expect(add("two", 5)).to.be.rejectedWith(Error)
         })
         
         it("should throw an expection with augend as 3 and addend as \"four\"", () => {
-            expect(add(3, "four")).to.rejectedWith(Error)
+            expect(add(3, "four")).to.be.rejectedWith(Error)
         })
     })
 })
