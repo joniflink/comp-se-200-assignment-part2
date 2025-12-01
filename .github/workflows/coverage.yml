@@ -7,23 +7,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-          cache: 'npm'  # Cache npm dependencies for faster builds
+          node-version: 18
 
       - name: Install dependencies
-        run: npm ci  # Use 'npm ci' for cleaner, faster installs in CI
-
-      - name: Install Coveralls CLI
-        run: npm install -g coveralls
+        run: npm install
 
       - name: Run tests with coverage
-        run: npm test -- --coverage
+        run: npm run coverage
 
       - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2
-
+        run: nyc report --reporter=text-lcov | coveralls
