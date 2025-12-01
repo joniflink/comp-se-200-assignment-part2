@@ -31,18 +31,18 @@ describe("add.js", () => {
     })
 
     describe("Both negative", () => {
-        it("should return -10 with augend as -2 and addend as -7", () => {
-            expect(add(-10, -7)).to.equal(-17)
+        it("should return -9 with augend as -2 and addend as -7", () => {
+            expect(add(-2, -7)).to.equal(-9)
         })
     })
 
     describe("Strings", () => {
         it("should throw an exception with augend as \"two\" and addend as 5", () => {
-            expect(add("two", 5)).to.throw()
+            expect(() => add("two", 5)).to.throw()
         })
         
         it("should throw an expection with augend as 3 and addend as \"four\"", () => {
-            expect(add(3, "four")).to.throw()
+            expect(() => add(3, "four")).to.throw()
         })
     })
 })
