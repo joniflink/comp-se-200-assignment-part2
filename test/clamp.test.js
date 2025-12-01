@@ -5,7 +5,7 @@ describe("clamp.js", () => {
     it("should return -5 with number as -10, lower as -5 and upper as 5", () => {
         expect(clamp(-10, -5, 5)).to.equal(-5)
     })
-    /*
+
     it("should return 5 with number as 10, lower as -5 and upper as 5", () => {
         expect(clamp(10, -5, 5)).to.equal(5)
     })
@@ -24,5 +24,5 @@ describe("clamp.js", () => {
 
     it("should throw an exception with number as 5, lower as 0 and upper as \"ten\"", () => {
         expect(clamp(5, 0, "ten")).to.throw()
-    })*/
+    })
 })
