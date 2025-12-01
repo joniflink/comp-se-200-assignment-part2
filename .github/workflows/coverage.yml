@@ -1,28 +1,22 @@
-name: Test Coverage
+name: Coverage
 
 on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm install
 
-      - name: Run tests with coverage
-        run: npm run coverage
+      - run: npm run coverage
 
-      - name: Upload coverage to Coveralls
+      - name: Upload to Coveralls
         run: |
           npx nyc report --reporter=text-lcov > coverage.lcov
           cat coverage.lcov | npx coveralls
-
