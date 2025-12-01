@@ -14,11 +14,15 @@ jobs:
 
       - run: npm install
 
-      - name: Generage coverage
-        run: npm run coverage || true
+      #- name: Generage coverage
+        #run: npm run coverage || true
 
-      - name: Debug coverage
-        run: ls -R . && cat coverage/lcov.info
+      - name: Run tests with coverage (ignore failures)
+        run: |
+          echo "Running coverage..."
+          npm run coverage || true
+          echo "Coverage folder contents:"
+          ls -R coverage || echo "No coverage output generated!"
 
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
