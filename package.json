@@ -5,13 +5,22 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "nyc --reporter=lcov --reporter=text mocha"
+  },
+  "nyc": {
+    "include": ["src/**/*.js"],
+    "exclude": ["test/**/*.js"],
+    "reporter": ["text", "lcov"],
+    "all": true
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "chai": "^6.2.1",
+    "coveralls": "^3.1.1",
     "mocha": "^11.7.2",
+    "nyc": "^17.1.0",
     "sinon": "^21.0.0"
   }
 }
