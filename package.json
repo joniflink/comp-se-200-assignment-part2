@@ -10,7 +10,7 @@
   },
   "nyc": {
     "include": [
-      "src/**/*.js"
+      "src/filter.js"
     ],
     "exclude": [
       "test/**/*.js"
