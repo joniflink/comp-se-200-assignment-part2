@@ -17,6 +17,9 @@ jobs:
       - name: Generage coverage
         run: npm run coverage || true
 
+      - name: Debug coverage
+        run: ls -R . && cat coverage/lcov.info
+
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
