@@ -103,3 +103,4 @@
 /node_modules/pify
 /node_modules/path-type
 /node_modules/path-parse
+/coverage

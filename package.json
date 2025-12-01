@@ -5,15 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha",
-    "coverage": "nyc --reporter=lcov --reporter=text --reporter=html mocha"
+    "coverage": "cross-env NODE_OPTIONS=--experimental-vm-modules nyc mocha"
   },
   "nyc": {
     "include": [
-      "src/filter.js"
+      "src/**/*.js"
     ],
     "exclude": [
       "test/**/*.js"
+    ],
+    "extension": [
+      ".js"
     ],
     "reporter": [
       "text",
@@ -26,6 +28,7 @@
   "devDependencies": {
     "chai": "^6.2.1",
     "coveralls": "^3.1.1",
+    "cross-env": "^10.1.0",
     "mocha": "^11.7.5",
     "nyc": "^17.1.0",
     "sinon": "^21.0.0"
