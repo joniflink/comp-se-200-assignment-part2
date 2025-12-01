@@ -15,7 +15,7 @@ jobs:
       - run: npm install
 
       - name: Generage coverage
-        run: npm run coverage || true
+        run: npm run coverage
 
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
