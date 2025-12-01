@@ -22,4 +22,7 @@ jobs:
         run: npm run coverage
 
       - name: Upload coverage to Coveralls
-        run: nyc report --reporter=text-lcov | coveralls
+        run: |
+          npx nyc report --reporter=text-lcov > coverage.lcov
+          cat coverage.lcov | npx coveralls
+
