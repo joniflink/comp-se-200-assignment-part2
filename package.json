@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "coverage": "nyc --reporter=lcov --reporter=text mocha"
+    "coverage": "NODE_OPTIONS=--experimental-vm-modules nyc mocha"
   },
   "nyc": {
     "include": [
