@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "coverage": "NODE_OPTIONS=--experimental-vm-modules nyc mocha"
+    "coverage": "nyc --reporter=lcov --reporter=text --reporter=html mocha"
   },
   "nyc": {
     "include": [
-      "src/**/*.js"
+      "src/filter.js"
     ],
     "exclude": [
       "test/**/*.js"

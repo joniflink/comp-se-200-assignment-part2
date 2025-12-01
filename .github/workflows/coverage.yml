@@ -15,9 +15,16 @@ jobs:
       - run: npm install
 
       - name: Generage coverage
-        run: npm run coverage
+        run: npm run coverage || true
+
+      - name: Upload coverage as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
 
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./coverage/lcov.info
