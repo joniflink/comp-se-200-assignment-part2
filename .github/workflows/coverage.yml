@@ -14,15 +14,14 @@ jobs:
 
       - run: npm install
 
-      #- name: Generage coverage
-        #run: npm run coverage || true
+      - name: Generage coverage
+        run: npm run coverage || true
 
-      - name: Run tests with coverage (ignore failures)
-        run: |
-          echo "Running coverage..."
-          npm run coverage || true
-          echo "Coverage folder contents:"
-          ls -R coverage || echo "No coverage output generated!"
+      - name: Upload coverage as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/
 
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
