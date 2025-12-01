@@ -15,13 +15,9 @@ jobs:
       - run: npm install
 
       - name: Generage coverage
-        run: npm run coverage || true
-
-      - name: Upload coverage as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: coverage/
+        run: npm run coverage
+        env:
+          NODE_ENV: test
 
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
