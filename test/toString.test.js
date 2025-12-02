@@ -29,8 +29,14 @@ describe("toString.js", () => {
     it("should return \"1,2,3\" with value as [1, 2, 3]", () => {
         expect(toString([1, 2, 3])).to.be.equal("1,2,3")
     })
+    it("should return \"5\" with value as [null, [undefined, 5]]", () => {
+        expect(toString([null, [undefined, 5]])).to.equal(",5")
+    })
 
     it("should return \"Symbol(Symbol.iterator)\" with value as Symbol.iterator", () => {
         expect(toString(Symbol.iterator)).to.be.equal("Symbol(Symbol.iterator)")
     })
+    it("should return \"-0\" with value as -INFINITY", () => {
+        expect(toString(-0)).to.equal("-0");
+    });
 })
