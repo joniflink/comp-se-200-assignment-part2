@@ -8,10 +8,20 @@ const users = [
 ]
 
 describe("filter.js", () => {
-	it("should reurn array of active users", () => {
-		expect(filter(users, ({ active }) => active).toString()).to.equal([{ 'user': 'barney', 'active': true }].toString())
+	it("should return array of active users", () => {
+		expect(filter(users, ({ active }) => active)).to.deep.equal([{ 'user': 'barney', 'active': true }])
 	})
-	it("should reurn array of not active users", () => {
-		expect(filter(users, ({ active }) => !active).toString()).to.equal([{ 'user': 'fred', 'active': false }].toString())
+	it("should return array of not active users", () => {
+		expect(filter(users, ({ active }) => !active)).to.deep.equal([{ 'user': 'fred', 'active': false }])
 	})
+	it("should return empty array when array is null", () => {
+		expect(filter(null, ({ active }) => active)).to.deep.equal([[]]);
+	});
+	it("should return empty array when array is undefined", () => {
+		expect(filter(undefined, ({ active }) => active)).to.deep.equal([[]]);
+	});
+	it("should return empty array when no elements match", () => {
+		expect(filter(users, ({ active }) => false)).to.deep.equal([[]]);
+	});
+
 })
