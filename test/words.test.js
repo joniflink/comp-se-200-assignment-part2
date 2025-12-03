@@ -17,4 +17,8 @@ describe("words.js", () => {
     it("should throw an exception with string as an integer (5)", () => {
         expect(words(5)).to.throw()
     })
+    it("should return [] (empty array) when pattern is provided but matches nothing", () => {
+        expect(words("abc", /\d+/g)).to.deep.equal([])
+    })
+
 })
