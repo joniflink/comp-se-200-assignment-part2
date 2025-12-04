@@ -2,13 +2,25 @@ import { expect } from "chai"
 import add from "../src/add.js"
 
 describe("add.js", () => {
-    describe("Both positive", () => {
+    describe("Part of initial test plan", () => {
         it("should return 2 with augend as 1 and addend as 1", () => {
             expect(add(1, 1)).to.equal(2)
         })
+
+        it("should return 11 with augend as -1 and addend as 12", () => {
+            expect(add(-1, 12)).to.equal(11)
+        })
+        
+        it("should return -17 with augend as -10 and addend as -7", () => {
+            expect(add(-10, -7)).to.equal(-17)
+        })
+
+        it("should throw an exception with augend as \"five\" and addend as \"ten\"", () => {
+            expect(add("five", "ten")).to.throw()
+        })
     })
 
-    describe("One negative, one positive", () => {
+    describe("Additional tests", () => {
         it("should return 11 with augend as -1 and addend as 12", () => {
             expect(add(-1, 12)).to.equal(11)
         })
@@ -28,15 +40,11 @@ describe("add.js", () => {
         it("should return 0 with augend as 5 and addend as -5", () => {
             expect(add(5, -5)).to.equal(0)
         })
-    })
 
-    describe("Both negative", () => {
         it("should return -9 with augend as -2 and addend as -7", () => {
             expect(add(-2, -7)).to.equal(-9)
         })
-    })
 
-    describe("Strings", () => {
         it("should throw an exception with augend as \"two\" and addend as 5", () => {
             expect(() => add("two", 5)).to.throw()
         })
