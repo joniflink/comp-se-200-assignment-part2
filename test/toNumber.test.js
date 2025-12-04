@@ -28,7 +28,7 @@ describe("toNumber.js", () => {
         const obj = { valueOf: () => ({ a: 1 }) }
         expect(toNumber(obj)).to.be.NaN
     })
-    it("sshould return \"NaN\" with null object", () => {
+    it("should return \"NaN\" with null object", () => {
         const obj = Object.create(null)
         expect(toNumber(obj)).to.be.NaN
     })

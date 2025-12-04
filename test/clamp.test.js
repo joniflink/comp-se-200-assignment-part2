@@ -13,8 +13,8 @@ describe("clamp.js", () => {
     it("should return 4 with number as 4, lower as -5 and upper as 5", () => {
         expect(clamp(4, -5, 5)).to.equal(4)
     })
-    it("should return 1 with number as 1, lower as 2 and upper as 5", () => {
-        expect(clamp(2, 2, 5)).to.equal(1)
+    it("should return 2 with number as 1, lower as 2 and upper as 5", () => {
+        expect(clamp(1, 2, 5)).to.equal(2)
     })
     it("should return 2 with number as 2, lower as 2 and upper as 2", () => {
         expect(clamp(2, 2, 2)).to.equal(2)
