@@ -7,23 +7,6 @@
   "scripts": {
     "coverage": "c8 --reporter=lcov --reporter=text mocha || true"
   },
-
-  "nyc": {
-    "include": [
-      "src/**/*.js"
-    ],
-    "exclude": [
-      "test/**/*.js"
-    ],
-    "extension": [
-      ".js"
-    ],
-    "reporter": [
-      "text",
-      "lcov"
-    ],
-    "all": true
-  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
